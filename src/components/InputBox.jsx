@@ -18,11 +18,12 @@ const InputBox = ({ ClassName = "", label, amount, currencyOptions, onCurrencyCh
         </select>
         <input
           type="number"
-          value={amount}
+          value={isNaN(amount) ? "" : amount}
           onChange={(e) => onAmountChange(e.target.value)}
           className="w-2/3 p-2 border rounded-md"
-          disabled={amountDisable} // Disable input if amountDisable is true
+          disabled={amountDisable}
         />
+
       </div>
     </div>
   );
